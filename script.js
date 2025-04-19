@@ -11,7 +11,6 @@ let tasks = [];
 function renderTasks(filter = 'all') {
     taskList.innerHTML = '';
 
-    // Filter tasks based on the selected filter type
     const filteredTasks = tasks.filter(task => {
         if (filter === 'completed') {
             return task.completed;
@@ -19,7 +18,7 @@ function renderTasks(filter = 'all') {
         if (filter === 'pending') {
             return !task.completed;
         }
-        return true; // If no filter is set, show all tasks
+        return true; 
     });
 
     filteredTasks.forEach((task, index) => {
@@ -34,46 +33,41 @@ function renderTasks(filter = 'all') {
     });
 }
 
-// Add a task
 addTaskBtn.addEventListener('click', () => {
     const taskText = taskInput.value.trim();
     if (taskText !== '') {
         tasks.push({ text: taskText, completed: false });
-        taskInput.value = '';  // Clear the input field after adding
-        renderTasks();         // Re-render task list
+        taskInput.value = ''; 
+        renderTasks();     
     }
 });
 
-// Toggle task completion (Complete or Undo)
 function toggleTaskCompletion(index) {
     tasks[index].completed = !tasks[index].completed;
-    renderTasks();  // Re-render after toggling completion status
+    renderTasks(); 
 }
 
-// Delete a task
 function deleteTask(index) {
     tasks.splice(index, 1);
-    renderTasks();  // Re-render after deleting a task
+    renderTasks();
 }
 
-// Clear all tasks
 clearAllBtn.addEventListener('click', () => {
-    tasks = [];  // Empty the tasks array
-    renderTasks();  // Re-render task list
+    tasks = []; 
+    renderTasks();
 });
 
-// Filter buttons event listeners
+
 completedTasksBtn.addEventListener('click', () => {
-    renderTasks('completed');  // Show only completed tasks
+    renderTasks('completed');
 });
 
 allTasksBtn.addEventListener('click', () => {
-    renderTasks('all');  // Show all tasks
+    renderTasks('all');
 });
 
 pendingTasksBtn.addEventListener('click', () => {
-    renderTasks('pending');  // Show only pending tasks
+    renderTasks('pending');
 });
 
-// Initial render
 renderTasks();
