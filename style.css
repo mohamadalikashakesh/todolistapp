@@ -11,10 +11,10 @@ body {
 
 .app-container {
   background-color: #3b3b3a;
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  width: 500px;
   text-align: center;
 }
 
@@ -24,17 +24,19 @@ h1 {
   color: #fcf7f7;
 }
 
-.input-container input {
+.input-container input{
+  border-color: #2c09f1;
   padding: 10px;
-  width: 70%;
+  width: 90%;
   margin-right: 10px;
+  margin-bottom: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
 
 .input-container button {
   padding: 10px;
-  background-color: #2c09f1;
+  background-color: #060314;
   color: white;
   border: none;
   cursor: pointer;
@@ -43,23 +45,29 @@ h1 {
 }
 
 .input-container button:hover {
-  background-color: #f1f1f3;
-  color:black;
+  background-color: #1e07c6;
+  /* color:black; */
   font-weight: bold;
 }
 
 button {
-  padding: 8px 15px;
-  margin-top: 10px;
-  background-color: #f4f7f5;
-  color: rgb(14, 13, 13);
+  padding: 5px 10px;
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 400;
+  font-size: 12px;
 }
 
 button:hover {
   background-color: #050101;
+  transform: translateY(-2px);
+}
+
+button:focus{
+  outline: none;
+  box-shadow: 0 0 5px 2px rgba(44, 9, 241, 0.6);
 }
 
 ul {
@@ -110,21 +118,30 @@ li {
 }
 
 .deleteBtn:hover {
-  background-color: #d3d0d0;
+  background-color: #4528b9;
+  color: white;
 }
 
 .clear-btn {
-  background-color: #2c09f1;
-  margin-top: 20px;
-  padding: 10px;
+  background-color: #060314;
+  color: white;
+  padding: 5px 10px;
   border: none;
   cursor: pointer;
-  color: white;
   border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 400;
+  font-size: 12px;
 }
 
 .clear-btn:hover {
-  background-color: #fcfafa;
-  color: #050101;
+  background-color: #1e07c6;
   font-weight: bold;
+}
+
+
+@media (max-width: 600px) {
+  .app-container {
+    width: 90%;
+  }
 }
